@@ -1,0 +1,21 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=10
+
+start()
+{
+	mentohust >/dev/null 2>&1
+}
+
+stop()
+{
+	sync
+	mentohust -k >/dev/null 2>&1
+}
+
+restart()
+{
+	stop
+	start
+}
